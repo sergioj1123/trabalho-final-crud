@@ -8,8 +8,14 @@
       <th>Email</th>
       <th>Data de Nascimento</th>
       <th class="text-center">
-        <a href="#" title="Novo" alt="Novo" class="btn btn-success">
-          <i class="fa fa-plus" aria-hidden="true">Novo</i>
+        <a
+          [routerLink]="['/alunos/cadastrar']"
+          href="#"
+          title="Novo"
+          alt="Novo"
+          class="btn btn-success"
+        >
+          <i class="fa fa-plus mx-1" aria-hidden="true"></i>Novo
         </a>
       </th>
     </tr>
@@ -20,10 +26,10 @@
       <td>{{ aluno.dataNascimento }}</td>
       <td class="text-center" style="width: 300px">
         <a href="#" title="Editar" alt="Editar" class="btn btn-info mx-2">
-          <i class="fa fa-edit" aria-hidden="true">Editar</i>
+          <i class="fa fa-edit mx-1" aria-hidden="true"></i>Editar
         </a>
         <a href="#" title="Remover" alt="Remover" class="btn btn-danger">
-          <i class="fa fa-times" aria-hidden="true">Remover</i>
+          <i class="fa fa-times mx-1" aria-hidden="true"></i>Remover
         </a>
       </td>
     </tr>

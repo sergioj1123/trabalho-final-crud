@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AlunoService } from './services/aluno.service';
 import { ListarAlunoComponent } from './listar-aluno/listar-aluno.component';
+import { InserirAlunoComponent } from './inserir-aluno/inserir-aluno.component';
 
 @NgModule({
   declarations: [
-    ListarAlunoComponent
+    ListarAlunoComponent,
+    InserirAlunoComponent
   ],
   imports: [
     CommonModule,
