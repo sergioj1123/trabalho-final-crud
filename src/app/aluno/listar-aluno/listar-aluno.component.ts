@@ -18,7 +18,6 @@ export class ListarAlunoComponent implements OnInit {
   }
 
   listarTodos(): Aluno[] {
-    //return this.alunoService.listarTodos();
     return this.alunoService.listarTodos();
   }
 }
