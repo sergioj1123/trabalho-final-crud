@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AlunoModule } from './aluno/aluno.module';
+import { CursoModule } from './curso/curso.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { AlunoModule } from './aluno/aluno.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AlunoModule
+    AlunoModule,
+    CursoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
