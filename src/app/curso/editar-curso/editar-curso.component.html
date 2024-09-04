@@ -1,0 +1,69 @@
+<div class="row m-4">
+  <h1>Editar Curso</h1>
+  <div class="well">
+    <form #formCurso="ngForm">
+      <div class="form-group m-2">
+        <label for="nome">Nome:</label>
+        <input
+          [(ngModel)]="curso.nome"
+          #nome="ngModel"
+          type="text"
+          class="form-control"
+          id="nome"
+          name="nome"
+          minlength="2"
+          required
+        />
+        <div
+          *ngIf="nome.errors && (nome.dirty || nome.touched)"
+          class="alert alert-danger m-2"
+        >
+          <div [hidden]="!nome.errors['required']">Digite o nome do aluno</div>
+          <div [hidden]="!nome.errors['minlength']">
+            O nome deve contrer ao menos 2 caracteres
+          </div>
+        </div>
+      </div>
+      <div class="form-group m-2">
+        <label for="link">Link:</label>
+        <input
+          [(ngModel)]="curso.link"
+          #link="ngModel"
+          type="text"
+          class="form-control"
+          id="link"
+          name="link"
+          minlength="5"
+          required
+        />
+        <div
+          *ngIf="link.errors && (link.dirty || link.touched)"
+          class="alert alert-danger m-2"
+        >
+          class="alert alert-danger m-2">
+          <div [hidden]="!link.errors['required']">Digite o link do curso</div>
+          <div [hidden]="!link.errors['minlength']">
+            O link deve contrer ao menos 5 caracteres
+          </div>
+        </div>
+      </div>
+      <div class="form-group m-2">
+        <button
+          (click)="atualizar()"
+          [disabled]="!formCurso.valid"
+          type="button"
+          class="btn btn-primary m-2"
+        >
+          <i class="fa fa-save mx-1" aria-hidden="true"></i>Salvar
+        </button>
+        <button
+          [routerLink]="['/cursos']"
+          type="button"
+          class="btn btn-secondary m-2"
+        >
+          <i class="fa fa-arrow-left mx-1" aria-hidden="true"></i>Voltar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
