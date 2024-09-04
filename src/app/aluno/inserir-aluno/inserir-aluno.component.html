@@ -1,100 +1,104 @@
-<h1>Novo Aluno</h1>
-<div class="well">
-  <form #formAluno="ngForm">
-    <div class="form-group m-2">
-      <label for="nome">Nome:</label>
-      <input
-        [(ngModel)]="aluno.nome"
-        #nome="ngModel"
-        type="text"
-        class="form-control"
-        id="nome"
-        name="nome"
-        minlength="2"
-        required
-      />
-      <div
-        *ngIf="nome.errors && (nome.dirty || nome.touched)"
-        class="alert alert-danger m-2"
-      >
-        <div [hidden]="!nome.errors['required']">Digite o nome do aluno</div>
-        <div [hidden]="!nome.errors['minlength']">
-          O nome deve contrer ao menos 2 caracteres
+<div class="row m-4">
+  <h1>Novo Aluno</h1>
+  <div class="well">
+    <form #formAluno="ngForm">
+      <div class="form-group m-2">
+        <label for="nome">Nome:</label>
+        <input
+          [(ngModel)]="aluno.nome"
+          #nome="ngModel"
+          type="text"
+          class="form-control"
+          id="nome"
+          name="nome"
+          minlength="2"
+          required
+        />
+        <div
+          *ngIf="nome.errors && (nome.dirty || nome.touched)"
+          class="alert alert-danger m-2"
+        >
+          <div [hidden]="!nome.errors['required']">Digite o nome do aluno</div>
+          <div [hidden]="!nome.errors['minlength']">
+            O nome deve contrer ao menos 2 caracteres
+          </div>
         </div>
       </div>
-    </div>
-    <div class="form-group m-2">
-      <label for="cpf">CPF:</label>
-      <input
-        [(ngModel)]="aluno.cpf"
-        #cpf="ngModel"
-        type="text"
-        class="form-control"
-        id="cpf"
-        name="cpf"
-        minlength="9"
-        required
-      />
-      <div
-        *ngIf="cpf.errors && (cpf.dirty || cpf.touched)"
-        class="alert alert-danger m-2"
-      >
-        class="alert alert-danger m-2">
-        <div [hidden]="!cpf.errors['required']">Digite o CPF do aluno</div>
-        <div [hidden]="!cpf.errors['minlength']">
-          O nome deve contrer ao menos 9 caracteres
+      <div class="form-group m-2">
+        <label for="cpf">CPF:</label>
+        <input
+          [(ngModel)]="aluno.cpf"
+          #cpf="ngModel"
+          type="text"
+          class="form-control"
+          id="cpf"
+          name="cpf"
+          minlength="9"
+          required
+        />
+        <div
+          *ngIf="cpf.errors && (cpf.dirty || cpf.touched)"
+          class="alert alert-danger m-2"
+        >
+          class="alert alert-danger m-2">
+          <div [hidden]="!cpf.errors['required']">Digite o CPF do aluno</div>
+          <div [hidden]="!cpf.errors['minlength']">
+            O nome deve contrer ao menos 9 caracteres
+          </div>
         </div>
       </div>
-    </div>
-    <div class="form-group m-2">
-      <label for="email">Email:</label>
-      <input
-        [(ngModel)]="aluno.email"
-        #email="ngModel"
-        type="text"
-        class="form-control"
-        id="email"
-        name="email"
-        minlength="2"
-        required
-      />
-      <div
-        *ngIf="email.errors && (email.dirty || email.touched)"
-        class="alert alert-danger m-2"
-      >
-        <div [hidden]="!email.errors['required']">Digite o Email do aluno</div>
-        <div [hidden]="!email.errors['minlength']">
-          O email deve contrer ao menos 2 caracteres
+      <div class="form-group m-2">
+        <label for="email">Email:</label>
+        <input
+          [(ngModel)]="aluno.email"
+          #email="ngModel"
+          type="text"
+          class="form-control"
+          id="email"
+          name="email"
+          minlength="2"
+          required
+        />
+        <div
+          *ngIf="email.errors && (email.dirty || email.touched)"
+          class="alert alert-danger m-2"
+        >
+          <div [hidden]="!email.errors['required']">
+            Digite o Email do aluno
+          </div>
+          <div [hidden]="!email.errors['minlength']">
+            O email deve contrer ao menos 2 caracteres
+          </div>
         </div>
       </div>
-    </div>
-    <div class="form-group m-2">
-      <label for="dataNascimento">Data de Nascimento:</label>
-      <input
-        [(ngModel)]="aluno.dataNascimento"
-        #dataNascimento="ngModel"
-        type="text"
-        class="form-control"
-        id="dataNascimento"
-        name="dataNascimento"
-      />
-    </div>
-    <div class="form-group m-2">
-      <button
-        (click)="inserirAluno()"
-        [disabled]="!formAluno.valid"
-        type="button"
-        class="btn btn-primary m-2"
-      >
-        <i class="fa fa-save mx-1" aria-hidden="true"></i>Salvar
-      </button>
-      <button
-        [routerLink]="['/alunos']"
-        type="button"
-        class="btn btn-secondary m-2"
-      >
-        <i class="fa fa-arrow-left mx-1" aria-hidden="true"></i>Voltar
-      </button>
-    </div>
-  </form>
+      <div class="form-group m-2">
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input
+          [(ngModel)]="aluno.dataNascimento"
+          #dataNascimento="ngModel"
+          type="text"
+          class="form-control"
+          id="dataNascimento"
+          name="dataNascimento"
+        />
+      </div>
+      <div class="form-group m-2">
+        <button
+          (click)="inserirAluno()"
+          [disabled]="!formAluno.valid"
+          type="button"
+          class="btn btn-primary m-2"
+        >
+          <i class="fa fa-save mx-1" aria-hidden="true"></i>Salvar
+        </button>
+        <button
+          [routerLink]="['/alunos']"
+          type="button"
+          class="btn btn-secondary m-2"
+        >
+          <i class="fa fa-arrow-left mx-1" aria-hidden="true"></i>Voltar
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
