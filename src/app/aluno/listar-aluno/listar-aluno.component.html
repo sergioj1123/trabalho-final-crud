@@ -34,7 +34,13 @@
         >
           <i class="fa fa-edit mx-1" aria-hidden="true"></i>Editar
         </a>
-        <a href="#" title="Remover" alt="Remover" class="btn btn-danger">
+        <a
+          (click)="remover($event, aluno)"
+          href="#"
+          title="Remover"
+          alt="Remover"
+          class="btn btn-danger"
+        >
           <i class="fa fa-times mx-1" aria-hidden="true"></i>Remover
         </a>
       </td>

@@ -20,4 +20,12 @@ export class ListarAlunoComponent implements OnInit {
   listarTodos(): Aluno[] {
     return this.alunoService.listarTodos();
   }
+
+  remover($event: any, aluno: Aluno): void {
+    $event.preventDefault();
+    if (confirm('Deseja realmente remover o aluno "' + aluno.nome + '"?')) {
+      this.alunoService.remover(aluno.id!);
+      this.alunos = this.listarTodos();
+  }
+  }
 }
